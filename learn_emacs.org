@@ -1,0 +1,138 @@
+#+title: Learn Emacs
+
+* Objective
+This file will capture important properties of Emacs for the viewer, help establish an Emacs-Rust workflow for the user, and organize a dialogue engine project.
+* Emacs Brainstorm
+** What is Emacs?
+*** Joe's Take
+- Vim's inferior cousin (joke?)
+- Text Editor which:
+  - is highly customizable
+*** Andrew's Take
+- Emacs is a Lisp interpreter, with many well-developed extensions written in Lisp.
+** The Principles
+*** Buffers, Windows, Frames
+**** Buffer
+- A buffer is a unique file or application in the system that is being accessed
+**** Window
+- displays buffers
+- describes a partition of a frame
+**** Frame
+- an emacs GUI instance displaying 1 or more windows
+*** Emacs Jargon
+| Emacs-ese | Mac      | Windows | Short Description        |
+|-----------+----------+---------+--------------------------|
+| M-        | Option-  | Alt-    | leader keys              |
+| C-        | control- | ctrl-   | leader keys              |
+| S-        | shift-   | shift-  | leader keys              |
+| M-x       |          |         | search through functions |
+|           |          |         |                          |
+*** Modes
+**** Major Modes
+- Govern the main behavior of Emacs' interaction with the buffer
+***** E.g
+- The file extension (syntax highlighting, custom functions)
+- The app running in emacs
+**** Minor Modes
+- modify major mode behavior, usually not a lot
+** Org-mode
+*** What is
+- Emacs' built-in writing and organization tool
+*** What's good
+- It's in Emacs
+- It gets out of your way
+- Infinitely customizable
+*** Some cool stuff
+**** Tables
+| Foo | Bar |
+|-----+-----|
+|     |     |
+|     |     |
+|     | dog |
+|     |     |
+|     |     |
+|     |     |
+|     |     |
+|     |     |
+|     |     |
+|     |     |
+|     |     |
+|     |     |
+|     |     |
+**** Links
+***** You can integrate a link into org-mode like [[https://i.stack.imgur.com/7Cu9Z.jpg][this]]
+**** Embed image in Org-mode
+**** Running code in Org-mode (!)
+#+begin_src sh
+echo ("hello world!")
+#+end_src
+
+#+RESULTS:
+**** todo
+***** STRT learn about emacs together [2/2] [100%]
+:LOGBOOK:
+CLOCK: [2024-02-10 Sat 21:23]--[2024-02-10 Sat 21:26] =>  0:03
+:END:
+- [X] buffers, frames, windows
+- [X] modes
+****
+* Emacs-Rust Workflow
+** Cargo commands
+- C-c C-c or SPC-m-b in rustic-mode
+*** TODO configure cargo emacs run to accept user input
+- [[https://emacs.stackexchange.com/questions/51156/cargo-process-does-not-accept-user-input][see here]]
+* Dialogue Engine
+** Name
+** The Game this Engine Serves
+- dialogue-driven text-based novel game
+- Everything the player does is selected from existing options
+- there are characters
+- there may be narration
+- the player can affect the outcome
+** Components of v1.0.0
+*** Engine
+- Main thing worked on (see here)
+**** TODO link to the relevant part of this doc
+*** TUI and engine API
+- Ignored for now
+*** Data
+- We need to know how we're structuring data so the engine can read it
+- We don't really need to have data (besides simple test cases)
+**** TODO link to the relevant part of this doc
+
+** How data is structured
+** The Engine
+*** Functions of the Engine
+- Send output text
+- Store and update hidden values
+- Store and update displayed values
+- Handle player decisions
+- Parse a tree of game outcomes
+- API which allows creating novel and playing
+- store
+-
+*** Objects
+**** TextVertex
+- an instance stores some text
+- connects to other instances
+- advances the pace of the game
+- has conditions associated with connections
+**** GameTreeGraph
+- digraph
+**** Character
+- tracks hidden values associated with each character
+**** GameState
+- tracks hidden values for the whole game
+****
+* Project todo
+** TODO create a shared user on github which can view repo
+* See Also
+** Game Designer Chris Crawford
+** TODO hack process diagram functionality
+- https://orgmode.org/worg/org-tutorials/org-dot-diagrams.html
+** DONE read about JSON-Rust
+- https://reintech.io/blog/working-with-json-in-rust
+** TODO read about model-view-controller framework
+** TODO read the Rust install instructions
+- https://doc.rust-lang.org/book/title-page.html
+** TODO

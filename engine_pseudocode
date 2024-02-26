@@ -1,0 +1,47 @@
+class TextVertex(
+
+  fn init(next){
+    src = read_from_json(next)
+    self.next == src.next
+    self.characters = src.characters
+    self.text ...
+    self.load_characters()
+    self.read_gamestate()
+  }
+
+  fn read_gamestate(){
+    # how is the gamestate stored
+    g = read_from_gamestate()
+  }
+
+  fn load_characters(self.characters){
+    # store character for purposes of checking values
+    # might be possible to pass character to next self.instance
+    unpack(self.characters)
+    while self.characters:
+      load_character(i)
+  }
+
+)
+
+class Selection(
+
+)
+
+struct gamestate(
+  values
+)
+
+class character(
+  values
+  # e.g. opinion of player
+  # e.g. events that have happened
+
+  fn update{
+     # updates self.values based on gamestate
+  }
+)
+
+class
+
+class
